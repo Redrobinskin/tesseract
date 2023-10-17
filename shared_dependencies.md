@@ -1,34 +1,27 @@
-Shared Dependencies:
+1. Flask: Used in "app/__init__.py", "app/routes.py", "run.py", and all test files. It's the main framework for the application.
 
-1. **Variables**: 
-   - `directory_path`: The path to the directory where the images are stored. Used in `load_images.py`.
-   - `image`: The image data loaded and preprocessed. Used in `load_images.py`, `preprocess_image.py`, `further_preprocessing.py`, and `extract_text.py`.
-   - `text`: The text extracted from the image. Used in `extract_text.py` and `output_to_json.py`.
-   - `json_output`: The JSON formatted output of the extracted text. Used in `output_to_json.py`, `store_output.py`.
+2. Jinja2: Used in "app/templates/index.html" and "app/templates/layout.html". It's the template engine for Flask.
 
-2. **Data Schemas**: 
-   - The schema for the JSON output in `output_to_json.py` is shared with `store_output.py` for storing in the database.
+3. SQLAlchemy: Used in "app/models.py" and test files. It's the ORM for database operations.
 
-3. **Function Names**: 
-   - `load_images(directory_path)`: Used in `load_images.py`.
-   - `preprocess_image(image)`: Used in `preprocess_image.py`.
-   - `further_preprocessing(image)`: Used in `further_preprocessing.py`.
-   - `extract_text(image)`: Used in `extract_text.py`.
-   - `output_to_json(text)`: Used in `output_to_json.py`.
-   - `init_db()`: Used in `init_db.py`.
-   - `store_output(json_output)`: Used in `store_output.py`.
-   - `retrieve_data(id=None)`: Used in `retrieve_data.py`.
-   - `dashboard()`: Used in `app.py`.
+4. WTForms: Used in "app/forms.py" and test files. It's a form handling library for Flask.
 
-4. **Libraries**: 
-   - Flask: Used in `app.py` for creating the web application.
-   - Tesseract: Used in `extract_text.py` for OCR.
+5. Config: Used in "app/__init__.py", "run.py", and "config.py". It's the configuration settings for the application.
 
-5. **Database**: 
-   - The NoSQL database initialized in `init_db.py` is shared with `store_output.py` and `retrieve_data.py`.
+6. CSS and JS: Used in "app/static/css/main.css" and "app/static/js/main.js". They are the styling and scripting languages for the web pages.
 
-6. **DOM Elements**: 
-   - No DOM elements are specified in the provided pseudocode.
+7. Test Cases: Used in all test files. They are the unit tests for the application.
 
-7. **Message Names**: 
-   - No message names are specified in the provided pseudocode.
+8. Requirements: Used in "requirements.txt". It lists all the dependencies for the application.
+
+9. Git: Used in ".gitignore". It's the version control system for the project.
+
+10. Markdown: Used in "README.md". It's the documentation for the project.
+
+11. DOM Elements: Used in "app/templates/index.html", "app/templates/layout.html", and "app/static/js/main.js". They are the HTML elements that JavaScript interacts with.
+
+12. Function Names: Used across all Python files. They are the named blocks of code that perform specific tasks in the application.
+
+13. Message Names: Used in "app/routes.py" and "app/forms.py". They are the named messages that are displayed to the user.
+
+14. Exported Variables: Used across all Python files. They are the variables that are shared between different parts of the application.
