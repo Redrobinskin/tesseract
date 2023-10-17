@@ -1,17 +1,34 @@
-Based on the user's prompt, the shared dependencies between the files we are generating could be:
+Shared Dependencies:
 
-1. Jinja2: This is a modern and designer-friendly templating language for Python, modelled after Django’s templates. It is used to generate dynamic HTML content. In this case, it is used in "dashboard.html" and possibly in "main.py", "app.py", "views.py", and "routes.py" for rendering the templates.
+1. **Variables**: 
+   - `directory_path`: The path to the directory where the images are stored. Used in `load_images.py`.
+   - `image`: The image data loaded and preprocessed. Used in `load_images.py`, `preprocess_image.py`, `further_preprocessing.py`, and `extract_text.py`.
+   - `text`: The text extracted from the image. Used in `extract_text.py` and `output_to_json.py`.
+   - `json_output`: The JSON formatted output of the extracted text. Used in `output_to_json.py`, `store_output.py`.
 
-2. Flask: This is a micro web framework written in Python. It doesn't require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. It is likely used in "main.py", "app.py", "views.py", and "routes.py" for setting up the web application and routing.
+2. **Data Schemas**: 
+   - The schema for the JSON output in `output_to_json.py` is shared with `store_output.py` for storing in the database.
 
-3. dashboard.html: This is the HTML template that is not found. It is likely referenced in "main.py", "app.py", "views.py", and "routes.py" for rendering the dashboard view.
+3. **Function Names**: 
+   - `load_images(directory_path)`: Used in `load_images.py`.
+   - `preprocess_image(image)`: Used in `preprocess_image.py`.
+   - `further_preprocessing(image)`: Used in `further_preprocessing.py`.
+   - `extract_text(image)`: Used in `extract_text.py`.
+   - `output_to_json(text)`: Used in `output_to_json.py`.
+   - `init_db()`: Used in `init_db.py`.
+   - `store_output(json_output)`: Used in `store_output.py`.
+   - `retrieve_data(id=None)`: Used in `retrieve_data.py`.
+   - `dashboard()`: Used in `app.py`.
 
-4. Function Names: There could be several function names that are shared across "main.py", "app.py", "views.py", and "routes.py". These could include functions for initializing the app, setting up routes, and rendering views.
+4. **Libraries**: 
+   - Flask: Used in `app.py` for creating the web application.
+   - Tesseract: Used in `extract_text.py` for OCR.
 
-5. Message Names: These are the names of messages that are passed between different parts of the application. They could be error messages (like the TemplateNotFound error), status messages, or other types of communication between different parts of the app.
+5. **Database**: 
+   - The NoSQL database initialized in `init_db.py` is shared with `store_output.py` and `retrieve_data.py`.
 
-6. Data Schemas: If the application is using a database, there could be shared data schemas between the different Python files. These would define the structure of the data that the application is working with.
+6. **DOM Elements**: 
+   - No DOM elements are specified in the provided pseudocode.
 
-7. DOM Element IDs: These would be used in the "dashboard.html" file and any JavaScript that the application is using. They provide a way to identify specific elements in the HTML document.
-
-8. Exported Variables: These are variables that are defined in one file and used in another. They could be used to share data between different parts of the application.
+7. **Message Names**: 
+   - No message names are specified in the provided pseudocode.
